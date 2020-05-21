@@ -7,30 +7,27 @@ computer_score = []
 restart = "yes"
 
 ## method to clean inputs with retry ##
-def cleanse(userinput):
-  userinput.lower()
-  userinput.strip()
-  while userinput not in answerlist:
-    userinput = input(retrymessage)
-    userinput.lower()
-    userinput.strip()
+def validate(userinput):
+
 
 ## start the game
 start_message = input("Are you ready to start? Type GO and hit RETURN to being the game")
-answerlist = ready
-retrymessage = "I didn't get that, try again typing Go"
-cleanse(start_message)
-
-## restart message if applicable
-
+lower.start_message
+trim.start_message
+while start_message not in ready:
+      start_message = input("I didn't get that - type GO to start")
+      lower.start_message
+      trim.start_message
+      
 while restart == "yes":
-
-  ## validated data input to and convert to int
   choice = input("are you going to choose rock, paper or scissors?")
-  answerlist = rps
-  retrymessage = "I didn't get that... try typing rock, paper or scissors?"
-  cleanse(choice)
-
+  lower.choice
+  trim.choice
+  while choice not in rps:
+      choice = input("I didn't get that - rock, paper or scissors")
+      lower.choice
+      trim.choice
+  
   print ("you chose", choice)
 
   ## get choices as ints
@@ -58,11 +55,16 @@ while restart == "yes":
   sumcompscore = sum(computer_score)
   print ("The score is",sumyourscore, "to you and",sumcompscore, "to the computer")
 
-  ## go again?
+  # restart
   restart = input("Do you want to go again?")
-  retrymessage = "I didn't get that. Type Yes or No"
-  answerlist = restartoptions
-  cleanse(restart)
+  lower.restart
+  trim.restart
+  while restart not in restartoptions:
+      restart = input("I didn't get that - YES or NO?")
+      lower.restart
+      trim.restart
+
   str(restart)
   if restart == "no":
     print ("Hope you enjoyed the game, bye")  
+
